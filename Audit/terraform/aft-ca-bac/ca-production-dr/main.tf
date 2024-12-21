@@ -20,7 +20,7 @@ module "acm-pca-intermediate-ca-dr" {
     # SUBORDINATE AWS Private CA Variable Values
 
     s3_crl_bucket_id           = module.s3-crl-bucket-pr-dr.s3_crl_bucket_dr_id
-    root_ca_arn                = module.acm-pca-root-ca.root_ca_arn
+    root_ca_arn                = module.ca-production.root_ca_arn_pr
     key_algorithm              = "RSA_2048"
     signing_algorithm          = "SHA256WITHRSA"
     subordinate_ca_type        = "SUBORDINATE"
@@ -43,7 +43,7 @@ module "acm-pca-subordinate-ca-dr" {
     # SUBORDINATE AWS Private CA Variable Values
 
     s3_crl_bucket_id           = module.s3-crl-bucket-pr-dr.s3_crl_bucket_dr_id
-    root_ca_arn                = module.acm-pca-root-ca.root_ca_arn
+    root_ca_arn                = module.ca-production.root_ca_arn_pr
     key_algorithm              = "RSA_2048"
     signing_algorithm          = "SHA256WITHRSA"
     subordinate_ca_type        = "SUBORDINATE"
