@@ -3,6 +3,16 @@
 #
 # S3 Bucket CA-CRL Configuration
 
+# resource "root_ca" "test" {
+#     nombre = module.ca-production.root_ca_arn_pr
+# }
+module "aft-ca-production" {
+
+    source = "./aft-ca-bac/ca-production"
+    aws_region  = "us-east-1"
+    servicio    = "Banca Digital"
+}
+
 module "s3-crl-bucket-pr-dr" {
     source = "../modules/s3-crl-bucket-pr-dr"
 
