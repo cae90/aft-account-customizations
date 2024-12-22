@@ -18,9 +18,9 @@ output "s3_logging_bucket_id" {
 #     value = module.aft-ca-development.s3_crl_bucket_id
 # }
 
-output "root_ca_arn" {
-     value = module.ca-production-dr.root_ca_arn
-}
+# output "root_ca_arn" {
+#      value = module.ca-production-dr.root_ca_arn
+# }
 
 # output "subordinate_ca_arn" {
 #     value = module.aft-ca-development.subordinate_ca_arn
