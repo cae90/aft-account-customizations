@@ -6,12 +6,14 @@
 # resource "root_ca" "test" {
 #     nombre = module.ca-production.root_ca_arn_pr
 # }
-module "aft-ca-production" {
 
-    source = "./aft-ca-bac/ca-production"
-    aws_region  = "us-east-1"
-    servicio    = "Banca Digital"
-}
+# resource "aws_ejemplo_recurso" "ejemplo" {
+
+#   # otros argumentos necesarios para este recurso
+
+#   arn_raiz = module.ca-production.root_ca_arn_pr
+
+# }
 
 module "s3-crl-bucket-pr-dr" {
     source = "../modules/s3-crl-bucket-pr-dr"
@@ -30,7 +32,7 @@ module "acm-pca-intermediate-ca-dr" {
     # SUBORDINATE AWS Private CA Variable Values
 
     s3_crl_bucket_id           = module.s3-crl-bucket-pr-dr.s3_crl_bucket_dr_id
-    root_ca_arn                = module.ca-production.root_ca_arn_pr
+    root_ca_arn                = var.arn
     key_algorithm              = "RSA_2048"
     signing_algorithm          = "SHA256WITHRSA"
     subordinate_ca_type        = "SUBORDINATE"
@@ -53,7 +55,7 @@ module "acm-pca-subordinate-ca-dr" {
     # SUBORDINATE AWS Private CA Variable Values
 
     s3_crl_bucket_id           = module.s3-crl-bucket-pr-dr.s3_crl_bucket_dr_id
-    root_ca_arn                = module.ca-production.root_ca_arn_pr
+    root_ca_arn                = var.arn
     key_algorithm              = "RSA_2048"
     signing_algorithm          = "SHA256WITHRSA"
     subordinate_ca_type        = "SUBORDINATE"

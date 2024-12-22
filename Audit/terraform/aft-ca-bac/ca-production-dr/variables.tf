@@ -55,3 +55,8 @@ variable "s3_logging_bucket_id"{
     type        = string
     description = "name of the bucket used to store the access logs in the account"
 }
+
+variable "arn" {
+    type    = string
+    description = "arn root"
+}

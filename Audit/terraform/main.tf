@@ -67,6 +67,7 @@ module "aft-ca-production-dr" {
     servicio    = "Banca Digital"
     idCargoSAP  = "REG.OP.24.101.03"
     s3_logging_bucket_id = module.s3-access-logs-bucket-dr.s3_logging_bucket_id
+    arn         = module.aft-ca-production.root_ca_arn_pr
 
     providers = {
         aws = aws.DR
