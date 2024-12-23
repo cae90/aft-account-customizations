@@ -34,20 +34,20 @@ resource "aws_acmpca_certificate_authority" "SubordinateCertificateAuthority" {
 
 # Subordinate CA Certificate
 
-# resource "aws_acmpca_certificate" "SubordinateCertificate" {
-#     provider = aws.virginia
-#     depends_on = [ aws_acmpca_certificate_authority.SubordinateCertificateAuthority ]
+resource "aws_acmpca_certificate" "SubordinateCertificate" {
+    provider = aws.virginia
+    depends_on = [ aws_acmpca_certificate_authority.SubordinateCertificateAuthority ]
 
-#     certificate_authority_arn   = var.root_ca_arn
-#     certificate_signing_request = aws_acmpca_certificate_authority.SubordinateCertificateAuthority.certificate_signing_request
-#     signing_algorithm           = var.signing_algorithm
-#     template_arn                = var.template_arn
+    certificate_authority_arn   = var.root_ca_arn
+    certificate_signing_request = aws_acmpca_certificate_authority.SubordinateCertificateAuthority.certificate_signing_request
+    signing_algorithm           = var.signing_algorithm
+    template_arn                = var.template_arn
 
-#     validity {
-#         type  = var.subordinate_validity_type
-#         value = var.subordinate_validity_value
-#     }
-# }
+    validity {
+        type  = var.subordinate_validity_type
+        value = var.subordinate_validity_value
+    }
+}
 
 resource "aws_acmpca_certificate_authority_certificate" "subordinate" {
 
