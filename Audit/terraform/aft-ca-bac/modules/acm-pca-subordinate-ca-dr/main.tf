@@ -50,7 +50,7 @@ resource "aws_acmpca_certificate" "SubordinateCertificate" {
 }
 
 resource "aws_acmpca_certificate_authority_certificate" "subordinate" {
-    provider = aws.DR
+
     certificate_authority_arn   = aws_acmpca_certificate_authority.SubordinateCertificateAuthority.arn
     certificate                 = aws_acmpca_certificate.SubordinateCertificate.certificate
     certificate_chain           = aws_acmpca_certificate.SubordinateCertificate.certificate_chain
