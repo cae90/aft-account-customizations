@@ -12,15 +12,3 @@ provider "aws" {
     }
   }
 }
-provider "aws" {
-  alias = "oregon"
-  region = "us-west-2"
-  assume_role {
-    role_arn    = "{{ target_admin_role_arn }}"
-  }
-  default_tags {
-    tags = {
-      managed_by                  = "AFT"
-    }
-  }
-}
