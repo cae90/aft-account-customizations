@@ -13,9 +13,8 @@ module "s3-access-logs-bucket-dr" {
 
         aws_region = "us-east-2"
         account_id = data.aws_caller_identity.current.account_id
-        providers = {
+    providers = {
         aws = aws.DR
-        aws.virginia = aws.virginia
         }
 }
 
@@ -72,7 +71,7 @@ module "aft-ca-production-dr" {
 
     providers = {
         aws = aws.DR
-        aws.virginia = aws.virginia
+        aws.virginia = aws
     }
     
 }
