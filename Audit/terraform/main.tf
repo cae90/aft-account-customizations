@@ -15,7 +15,6 @@ module "s3-access-logs-bucket-dr" {
         account_id = data.aws_caller_identity.current.account_id
     providers = {
         aws = aws.DR
-        aws.oregon = aws
         }
 }
 
