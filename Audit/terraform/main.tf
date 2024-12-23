@@ -8,15 +8,15 @@ module "s3-access-logs-bucket" {
         account_id = data.aws_caller_identity.current.account_id
 }
 
-module "s3-access-logs-bucket-dr" {
-    source = "./aft-ca-bac/modules/s3-access-logs-bucket-dr"
+# module "s3-access-logs-bucket-dr" {
+#     source = "./aft-ca-bac/modules/s3-access-logs-bucket-dr"
 
-        aws_region = "us-east-2"
-        account_id = data.aws_caller_identity.current.account_id
-    providers = {
-        aws = aws.DR
-        }
-}
+#         aws_region = "us-east-2"
+#         account_id = data.aws_caller_identity.current.account_id
+#     providers = {
+#         aws = aws.DR
+#         }
+# }
 
 # module "aft-ca-development" {
 
@@ -52,29 +52,29 @@ module "aft-ca-production" {
     s3_logging_bucket_id = module.s3-access-logs-bucket.s3_logging_bucket_id
 }
 
-module "aft-ca-production-dr" {
+# module "aft-ca-production-dr" {
 
-    source = "./aft-ca-bac/ca-production-dr"
+#     source = "./aft-ca-bac/ca-production-dr"
 
-    aws_region  = "us-east-2"
-    service     = "aws-private-ca-prod-dr"
-    direccion   = "D.R. Transformacion Digital"
-    gerencia    = "Transformacion Digital"
-    proyecto    = "MSN-5843"
-    centroCostos = "5053SSC"
-    responsable = "Jose Manuel Paez"
-    ambiente    = "Produccion"
-    servicio    = "Banca Digital"
-    idCargoSAP  = "REG.OP.24.101.03"
-    s3_logging_bucket_id = module.s3-access-logs-bucket-dr.s3_logging_bucket_id
-    arn         = module.aft-ca-production.root_ca_arn_pr
+#     aws_region  = "us-east-2"
+#     service     = "aws-private-ca-prod-dr"
+#     direccion   = "D.R. Transformacion Digital"
+#     gerencia    = "Transformacion Digital"
+#     proyecto    = "MSN-5843"
+#     centroCostos = "5053SSC"
+#     responsable = "Jose Manuel Paez"
+#     ambiente    = "Produccion"
+#     servicio    = "Banca Digital"
+#     idCargoSAP  = "REG.OP.24.101.03"
+#     s3_logging_bucket_id = module.s3-access-logs-bucket-dr.s3_logging_bucket_id
+#     arn         = module.aft-ca-production.root_ca_arn_pr
 
-    providers = {
-        aws = aws.DR
-        aws.oregon = aws
-    }
+#     providers = {
+#         aws = aws.DR
+#         aws.oregon = aws
+#     }
     
-}
+# }
 
 # module "aft-auditmanager-tgt"{
 #     source ="./aft-auditmanager-tgt"
