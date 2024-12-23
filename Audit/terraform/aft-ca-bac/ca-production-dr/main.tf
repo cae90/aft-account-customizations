@@ -36,7 +36,7 @@ module "acm-pca-intermediate-ca-dr" {
     tags    = local.common_tags
     providers = {
         aws = aws.DR
-        aws.virginia = aws
+        aws.oregon = aws
     }
 }   
 # SUBODINATE AWS Private CA  DR Configuration
@@ -62,7 +62,7 @@ module "acm-pca-subordinate-ca-dr" {
     tags    = local.common_tags
     providers = {
         aws = aws.DR
-        aws.virginia = aws
+        aws.oregon = aws
     }
 }
 
