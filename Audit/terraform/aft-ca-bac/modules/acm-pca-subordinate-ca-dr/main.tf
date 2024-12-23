@@ -35,7 +35,7 @@ resource "aws_acmpca_certificate_authority" "SubordinateCertificateAuthority" {
 # Subordinate CA Certificate
 
 resource "aws_acmpca_certificate" "SubordinateCertificate" {
-    # provider = aws.virginia
+    provider = aws.virginia
     depends_on = [ aws_acmpca_certificate_authority.SubordinateCertificateAuthority ]
 
     certificate_authority_arn   = var.root_ca_arn
