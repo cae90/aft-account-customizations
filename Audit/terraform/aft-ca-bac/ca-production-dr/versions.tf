@@ -3,7 +3,7 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.64"
-      configuration_aliases = [ aws,oregon ]
+      configuration_aliases = [ aws,aws.virginia ]
     }
   }
 }
