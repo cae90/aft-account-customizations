@@ -71,6 +71,7 @@ module "aft-ca-production-dr" {
 
     providers = {
         aws = aws.DR
+        aws.virginia = aws
 }
     
 }
