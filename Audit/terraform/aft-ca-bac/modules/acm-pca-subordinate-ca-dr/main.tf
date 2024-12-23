@@ -1,18 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
-provider "aws" {
-  alias = "virginia"
-  region = "us-west-2"
-  assume_role {
-    role_arn    = "{{ target_admin_role_arn }}"
-  }
-  default_tags {
-    tags = {
-      managed_by                  = "AFT"
-    }
-  }
-}
+
 # Subordinate CA
 resource "aws_acmpca_certificate_authority" "SubordinateCertificateAuthority" {
     type = var.subordinate_ca_type
@@ -46,7 +35,7 @@ resource "aws_acmpca_certificate_authority" "SubordinateCertificateAuthority" {
 # Subordinate CA Certificate
 
 resource "aws_acmpca_certificate" "SubordinateCertificate" {
-    provider = aws.virginia
+    # provider = aws.virginia
     depends_on = [ aws_acmpca_certificate_authority.SubordinateCertificateAuthority ]
 
     certificate_authority_arn   = var.root_ca_arn
