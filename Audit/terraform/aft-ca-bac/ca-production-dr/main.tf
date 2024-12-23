@@ -34,10 +34,6 @@ module "acm-pca-intermediate-ca-dr" {
     subordinate_ca_org         = "BAC LATAM"
     subordinate_ca_ou          = "Seguridad"
     tags    = local.common_tags
-    providers = {
-        aws = aws.DR
-        aws.oregon = aws
-    }
 }   
 # SUBODINATE AWS Private CA  DR Configuration
 module "acm-pca-subordinate-ca-dr" {
@@ -60,10 +56,6 @@ module "acm-pca-subordinate-ca-dr" {
     subordinate_ca_org         = "BAC LATAM"
     subordinate_ca_ou          = "Seguridad"
     tags    = local.common_tags
-    providers = {
-        aws = aws.DR
-        aws.oregon = aws
-    }
 }
 
 module "acm-pca-ram-share-pr-dr" {
