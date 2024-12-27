@@ -6,9 +6,9 @@
 # S3 Acccess Logs Bucket Resources Deployed
 #########################################
 
-output "s3_logging_bucket_id" {
-    value = module.s3-access-logs-bucket.s3_logging_bucket_id
-}
+# output "s3_logging_bucket_id" {
+#     value = module.s3-access-logs-bucket.s3_logging_bucket_id
+# }
 
 #########################################
 # CA Development and DR Resources Deployed
