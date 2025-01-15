@@ -1,6 +1,6 @@
-# # Copyright Amazon.com, Inc. or its affiliates. All rights reserved.
-# # SPDX-License-Identifier: Apache-2.0
-# #
+# Copyright Amazon.com, Inc. or its affiliates. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
 
 # module "aft-scps-bac" {
 #     source = "./aft-scps-bac"
@@ -11,11 +11,11 @@
 #     policies_directory_name = "policies"
 # }
 
-# module "aft-auditmanager-mgmt"{
-#     source ="./aft-auditmanager-mgmt"
+module "aft-auditmanager-mgmt"{
+    source ="./aft-auditmanager-mgmt"
 
-#     administrator_account_id = "12345678"
-# }
+    administrator_account_id = "904692622892"
+}
 
 # module "aft-log-source-mgmt"{
 #     source ="./aft-log-source-mgmt"

@@ -7,9 +7,9 @@
 #########################################
 
 
-output "aws_organizations_policy_attachment" {
-    value = module.aft-scps-bac.aws_organizations_policy_attachment
-}
+# output "aws_organizations_policy_attachment" {
+#     value = module.aft-scps-bac.aws_organizations_policy_attachment
+# }
 
 #########################################
 # aft auditmanager bac
@@ -23,6 +23,6 @@ output "aws_admin_account_registration" {
 # aft log source bac
 #########################################
 
-output "aws_cw_subscription_filter_name" {
-    value = module.aft-log-source-mgmt.aws_cw_subscription_filter_name
-}
+# output "aws_cw_subscription_filter_name" {
+#     value = module.aft-log-source-mgmt.aws_cw_subscription_filter_name
+# }
