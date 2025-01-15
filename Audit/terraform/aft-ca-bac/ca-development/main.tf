@@ -29,9 +29,9 @@ module "acm-pca-root-ca" {
   template_arn        = "arn:aws:acm-pca:::template/RootCACertificate/V1"
   root_ca_common_name = "Bac Credomatic Root CL DV"
   root_ca_country     = "CR"
-  root_ca_state       = "San Jose"
-  root_ca_locality    = "San Jose"
-  root_ca_org         = "BAC LATAM"
+  root_ca_state       = "xxxxxx"
+  root_ca_locality    = "xxxxxx"
+  root_ca_org         = "xxxxxx"
   root_ca_ou          = "Seguridad"
   tags                = local.common_tags
 }
@@ -50,18 +50,18 @@ module "acm-pca-subordinate-ca" {
   subordinate_validity_type  = "YEARS"
   subordinate_validity_value = 10
   template_arn               = "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1"
-  subordinate_ca_common_name = "Bac Credomatic Emisor CL DV"
-  subordinate_ca_country     = "CR"
-  subordinate_ca_state       = "San Jose"
-  subordinate_ca_locality    = "San Jose"
-  subordinate_ca_org         = "BAC LATAM"
+  subordinate_ca_common_name = "XXXXXX"
+  subordinate_ca_country     = "XXXXX"
+  subordinate_ca_state       = "XXXXX"
+  subordinate_ca_locality    = "XXXXX"
+  subordinate_ca_org         = "XXXXX"
   subordinate_ca_ou          = "Seguridad"
   tags                       = local.common_tags
 }
 
 module "acm-pca-ram-share" {
   source                    = "../modules/acm-pca-ram-share"
-  ram_share_name            = "BACPCASubCADevShare"
+  ram_share_name            = "XXXXX"
   allow_external_principals = false
   subordinate_ca_arn        = module.acm-pca-subordinate-ca.subordinate_ca_arn
   # If no value is specified resource is shared with Organization

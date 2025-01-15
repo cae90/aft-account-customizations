@@ -1,0 +1,128 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyAllOutsideUSA",
+            "Effect": "Deny",
+            "Resource": "*",
+            "Action": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": [
+                        "us-east-1",
+                        "us-east-2",
+                        "us-weast-2",
+                        "us-weast-1"
+                    ]
+                },
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*",
+                        "arn:aws:iam::*:role/AWSAFTExecution"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyLeaveOrganization",
+            "Effect": "Deny",
+            "Action": [
+                "organizations:LeaveOrganization"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*",
+                        "arn:aws:iam::*:role/AWSAFTExecution"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid":"DisableEBSEncrypt",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:DisableEbsEncryptionByDefault"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*",
+                        "arn:aws:iam::*:role/AWSAFTExecution"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyKmsDelete",
+            "Effect":"Deny",
+            "Action":[
+                "kms:ScheduleKeyDeletion",
+                "kms:DeleteAlias",
+                "kms:DeleteCustomKeyStore",
+                "kms:DeleteImportedKeyMaterial"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/AWSAFTExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyCreateModifyIdp",
+            "Effect":"Deny",
+            "Action":[
+                "iam:CreateOpenIDConnectProvider",
+                "iam:CreateSAMLProvider",
+                "iam:DeleteOpenIDConnectProvider",
+                "iam:DeleteSAMLProvider",
+                "iam:UpdateOpenIDConnectProviderThumbprint",
+                "iam:UpdateSAMLProvider"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*",
+                        "arn:aws:iam::*:role/AWSAFTExecution",
+                        "arn:aws:iam::*:role/aws-Terraform"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "DenyModifyS3Public",
+            "Effect": "Deny",
+            "Action": [
+                "s3:PutAccountPublicAccessBlock"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": [
+                        "arn:aws:iam::*:role/AWSControlTowerExecution",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_*",
+                        "arn:aws:iam::*:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_*",
+                        "arn:aws:iam::*:role/AWSAFTExecution"
+                    ]
+                }
+            }
+        }
+    ]
+}

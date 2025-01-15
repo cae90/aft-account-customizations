@@ -25,14 +25,14 @@
 
 # #     aws_region  = "us-east-1"
 # #     service     = "aws-private-ca-dev"
-# #     direccion   = "D.R. Transformacion Digital"
-# #     gerencia    = "Transformacion Digital"
-# #     proyecto    = "MSN-5843"
-# #     centroCostos = "5053SSC"
-# #     responsable = "Jose Manuel Paez"
-# #     ambiente    = "Desarrollo"
-# #     servicio    = "Banca Digital"
-# #     idCargoSAP  = "REG.OP.24.101.03"
+# #     direccion   = "D.R. xxxxxxx"
+# #     gerencia    = "Transformacion xxxxxx"
+# #     proyecto    = "xxxxx"
+# #     centroCostos = "xxxxxx"
+# #     responsable = "xxxxxx"
+# #     ambiente    = "xxxxxx"
+# #     servicio    = "xxxxxx"
+# #     idCargoSAP  = "xxxxxxxxx"
 # #     s3_logging_bucket_id = module.s3-access-logs-bucket.s3_logging_bucket_id
 # # }
 
@@ -42,14 +42,14 @@
 
 #     aws_region  = "us-east-1"
 #     service     = "aws-private-ca-prod"
-#     direccion   = "D.R. Transformacion Digital"
-#     gerencia    = "Transformacion Digital"
-#     proyecto    = "MSN-5843"
-#     centroCostos = "5053SSC"
-#     responsable = "Jose Manuel Paez"
-#     ambiente    = "Produccion"
-#     servicio    = "Banca Digital"
-#     idCargoSAP  = "REG.OP.24.101.03"
+#     direccion   = "D.R. xxxxxx"
+#     gerencia    = "xxxxxx"
+#     proyecto    = "xxxxxx"
+#     centroCostos = "xxxxx"
+#     responsable = "xxxxxx"
+#     ambiente    = "xxxxxx"
+#     servicio    = "xxxxxxx"
+#     idCargoSAP  = "xxxxxxx"
 #     s3_logging_bucket_id = module.s3-access-logs-bucket.s3_logging_bucket_id
 # }
 
@@ -59,14 +59,14 @@
 
 # #     aws_region  = "us-east-2"
 # #     service     = "aws-private-ca-prod-dr"
-# #     direccion   = "D.R. Transformacion Digital"
-# #     gerencia    = "Transformacion Digital"
-# #     proyecto    = "MSN-5843"
-# #     centroCostos = "5053SSC"
-# #     responsable = "Jose Manuel Paez"
-# #     ambiente    = "Produccion"
-# #     servicio    = "Banca Digital"
-# #     idCargoSAP  = "REG.OP.24.101.03"
+# #     direccion   = "xxxxxx"
+# #     gerencia    = "xxxxxx"
+# #     proyecto    = "xxxxxx"
+# #     centroCostos = "xxxxxx"
+# #     responsable = "xxxxxx"
+# #     ambiente    = "xxxxx"
+# #     servicio    = "xxxxx"
+# #     idCargoSAP  = "xxxxx"
 # #     s3_logging_bucket_id = module.s3-access-logs-bucket-dr.s3_logging_bucket_id
 # #     #arn root ca
 # #     arn         = module.aft-ca-production.root_ca_arn_pr
@@ -86,5 +86,5 @@
 # #         "arn:aws:iam::374165089831:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_4246ad7f15449d67"
 # #         ]
 # #     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
-# #     assessment_account_ids = ["992382711611", "339713170197"]
+# #     assessment_account_ids = ["12345678", "12345678"]
 # # }

@@ -27,11 +27,11 @@
 #     subordinate_validity_type  = "YEARS"
 #     subordinate_validity_value = 18
 #     template_arn               = "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen1/V1"
-#     subordinate_ca_common_name = "Bac Credomatic Politicas CL PR-DR"
-#     subordinate_ca_country     = "CR"
-#     subordinate_ca_state       = "San Jose"
-#     subordinate_ca_locality    = "San Jose"
-#     subordinate_ca_org         = "BAC LATAM"
+#     subordinate_ca_common_name = "XXXXX"
+#     subordinate_ca_country     = "XXXXX"
+#     subordinate_ca_state       = "XXXXX"
+#     subordinate_ca_locality    = "XXXXX"
+#     subordinate_ca_org         = "XXXXX"
 #     subordinate_ca_ou          = "Seguridad"
 #     tags    = local.common_tags
 #     #providers Orgeon
@@ -53,11 +53,11 @@
 #     subordinate_validity_type  = "YEARS"
 #     subordinate_validity_value = 10
 #     template_arn               = "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1"
-#     subordinate_ca_common_name = "Bac Credomatic Emisor CL PR-DR"
-#     subordinate_ca_country     = "CR"
-#     subordinate_ca_state       = "San Jose"
-#     subordinate_ca_locality    = "San Jose"
-#     subordinate_ca_org         = "BAC LATAM"
+#     subordinate_ca_common_name = "XXXXX"
+#     subordinate_ca_country     = "XXXXX"
+#     subordinate_ca_state       = "XXXXX"
+#     subordinate_ca_locality    = "XXXXX"
+#     subordinate_ca_org         = "XXXXX"
 #     subordinate_ca_ou          = "Seguridad"
 #     tags    = local.common_tags
 #     providers = {
@@ -80,11 +80,11 @@
 #     subordinate_validity_type  = "YEARS"
 #     subordinate_validity_value = 10
 #     template_arn               = "arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen0/V1"
-#     subordinate_ca_common_name = "Bac Credomatic Emisor CL PR-DR"
-#     subordinate_ca_country     = "CR"
-#     subordinate_ca_state       = "San Jose"
-#     subordinate_ca_locality    = "San Jose"
-#     subordinate_ca_org         = "BAC LATAM"
+#     subordinate_ca_common_name = "XXXXX"
+#     subordinate_ca_country     = "XXXXX"
+#     subordinate_ca_state       = "XXXXX"
+#     subordinate_ca_locality    = "XXXXX"
+#     subordinate_ca_org         = "XXXXX"
 #     subordinate_ca_ou          = "Seguridad"
 #     tags    = local.common_tags
 #     providers = {
@@ -94,7 +94,7 @@
 
 # module "acm-pca-ram-share-pr-dr" {
 #     source                    = "../modules/acm-pca-ram-share-pr-dr"
-#     ram_share_name            = "BACPCASubCAProdDRShare"
+#     ram_share_name            = "XXXXX"
 #     allow_external_principals = false
 #     subordinate_ca_arn        = module.acm-pca-subordinate-ca-dr.subordinate_ca_arn_dr
 #     # If no value is specified resource is shared with Organization
