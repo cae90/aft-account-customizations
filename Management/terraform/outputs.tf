@@ -15,9 +15,9 @@
 # aft auditmanager bac
 #########################################
 
-output "aws_admin_account_registration" {
-    value = module.aft-auditmanager-mgmt.aws_admin_account_registration
-}
+# output "aws_admin_account_registration" {
+#     value = module.aft-auditmanager-mgmt.aws_admin_account_registration
+# }
 
 #########################################
 # aft log source bac
