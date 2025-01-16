@@ -11,7 +11,7 @@ output "custom_kms_audit_manager_key_id" {
 }
 
 output "audit_account_registration_id" {
-    value = aws_auditmanager_account_registration.audit_account_registration.id
+    value = aws_auditmanager_account_registration.audit_account_registration_dr.id
 }
 
 #########################################
@@ -19,7 +19,7 @@ output "audit_account_registration_id" {
 #########################################
 
 output "s3_assessment_bucket_id" {
-    value = module.s3_bucket_assessment-dr.s3_assessment_bucket_id
+    value = module.s3_bucket_assessment_dr.s3_assessment_bucket_id
 }
 
 #########################################
