@@ -8,16 +8,16 @@ module "s3-access-logs-bucket" {
         account_id = data.aws_caller_identity.current.account_id
 }
 
-# module "s3-access-logs-bucket-dr" {
-#     source = "./aft-ca-bac/modules/s3-access-logs-bucket-dr"
+module "s3-access-logs-bucket-dr" {
+    source = "./aft-ca-bac/modules/s3-access-logs-bucket-dr"
 
-#         aws_region = "us-east-2"
-#         account_id = data.aws_caller_identity.current.account_id
-#     #providers aws.DR file aft-providers-dr.jinja
-#     providers = {
-#         aws = aws.DR
-#         }
-# }
+        aws_region = "us-east-2"
+        account_id = data.aws_caller_identity.current.account_id
+    #providers aws.DR file aft-providers-dr.jinja
+    providers = {
+        aws = aws.DR
+        }
+}
 
 # # module "aft-ca-development" {
 
@@ -89,4 +89,21 @@ module "aft-auditmanager-tgt"{
         ]
     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
     assessment_account_ids = ["984761018131", "739240486781"]
+}
+
+module "aft-auditmanager-tgt-dr"{
+    source ="./aft-auditmanager-tgt-dr"
+
+    audit_manager_owner_role = [ 
+        
+        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
+        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
+        
+        ]
+    s3_logging_bucket_id =  module.s3-access-logs-bucket-dr.s3_logging_bucket_id
+    assessment_account_ids = ["984761018131", "739240486781"]
+    providers = {
+        aws = aws.DR
+        aws.oregon = aws
+    }
 }
