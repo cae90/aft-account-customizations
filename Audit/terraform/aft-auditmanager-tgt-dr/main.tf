@@ -18,7 +18,7 @@ resource "aws_auditmanager_account_registration" "audit_account_registration_dr"
   kms_key = aws_kms_key.custom_kms_audit_manager_dr.arn
 }
 
-module "s3_bucket_assessmen_dr" {
+module "s3_bucket_assessment_dr" {
   source                     = "./modules/s3_bucket_assessment-dr"
   aws_region                 = data.aws_region.current.name
   aws_account_id             = data.aws_caller_identity.current.account_id
