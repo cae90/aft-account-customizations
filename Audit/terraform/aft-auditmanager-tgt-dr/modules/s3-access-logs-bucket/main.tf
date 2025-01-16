@@ -4,7 +4,7 @@
 
 # S3 Access Logs Bucket
 resource "aws_s3_bucket" "logging-bucket" {
-  bucket = "access-logging-bucket-${var.account_id}-${var.aws_region}"
+  bucket = "access-logging-bucket-DR-${var.account_id}-${var.aws_region}"
 }
 
 resource "aws_s3_bucket_policy" "logging-bucket-policy" {

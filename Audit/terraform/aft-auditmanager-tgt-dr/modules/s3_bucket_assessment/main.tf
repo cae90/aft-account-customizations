@@ -5,7 +5,7 @@
 
 # S3 Bucket Assessment
 resource "aws_s3_bucket" "assessment_bucket" {
-    bucket = "audit-manager-assessment-bucket-${var.aws_account_id}"
+    bucket = "audit-manager-assessment-bucket-DR-${var.aws_account_id}"
     force_destroy = true
 }
 

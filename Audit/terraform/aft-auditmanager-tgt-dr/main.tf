@@ -10,12 +10,12 @@ resource "aws_kms_key" "custom_kms_audit_manager_dr" {
 }
 
 resource "aws_kms_alias" "custom_kms_audit_manager_alias_dr" {
-  name          = "alias/audit-manager-key"
-  target_key_id = aws_kms_key.custom_kms_audit_manager.key_id
+  name          = "alias/audit-manager-key-dr"
+  target_key_id = aws_kms_key.custom_kms_audit_manager_dr.key_id
 }
 
 resource "aws_auditmanager_account_registration" "audit_account_registration_dr" {
-  kms_key = aws_kms_key.custom_kms_audit_manager.arn
+  kms_key = aws_kms_key.custom_kms_audit_manager_dr.arn
 }
 
 module "s3_bucket_assessmen_dr" {
@@ -23,7 +23,7 @@ module "s3_bucket_assessmen_dr" {
   aws_region                 = data.aws_region.current.name
   aws_account_id             = data.aws_caller_identity.current.account_id
   s3_logging_bucket_id       = var.s3_logging_bucket_id
-  audit_manager_kms_arn      = aws_kms_key.custom_kms_audit_manager.arn
+  audit_manager_kms_arn      = aws_kms_key.custom_kms_audit_manager_dr.arn
   audit_manager_owner_role   = var.audit_manager_owner_role
 }
 
