@@ -19,7 +19,7 @@ output "audit_account_registration_id" {
 #########################################
 
 output "s3_assessment_bucket_id" {
-    value = module.s3_bucket_assessment_dr.s3_assessment_bucket_id
+    value = module.s3_bucket_assessment.s3_assessment_bucket_id
 }
 
 #########################################
