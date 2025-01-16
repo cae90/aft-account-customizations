@@ -1,12 +1,12 @@
 # # Copyright Amazon.com, Inc. or its affiliates. All rights reserved.
 # # SPDX-License-Identifier: Apache-2.0
 # #
-# module "s3-access-logs-bucket" {
-#     source = "./aft-ca-bac/modules/s3-access-logs-bucket"
+module "s3-access-logs-bucket" {
+    source = "./aft-ca-bac/modules/s3-access-logs-bucket"
 
-#         aws_region = "us-east-1"
-#         account_id = data.aws_caller_identity.current.account_id
-# }
+        aws_region = "us-east-1"
+        account_id = data.aws_caller_identity.current.account_id
+}
 
 # module "s3-access-logs-bucket-dr" {
 #     source = "./aft-ca-bac/modules/s3-access-logs-bucket-dr"
