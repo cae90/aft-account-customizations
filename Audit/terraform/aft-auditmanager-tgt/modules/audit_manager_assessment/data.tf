@@ -3,6 +3,6 @@
 #
 
 data "aws_auditmanager_framework" "pci_40" {
-    name           = "AWS PCI DSS v4.0 Framework"
+    name           = "Payment Card Industry Data Security Standard (PCI DSS) v4.0"
     framework_type = "Standard"
 }
