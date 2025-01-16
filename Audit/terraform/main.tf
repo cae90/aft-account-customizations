@@ -78,13 +78,15 @@
     
 # # }
 
-# # module "aft-auditmanager-tgt"{
-# #     source ="./aft-auditmanager-tgt"
+module "aft-auditmanager-tgt"{
+    source ="./aft-auditmanager-tgt"
 
-# #     audit_manager_owner_role = [ 
-# #         "arn:aws:iam::374165089831:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSIAMAdmin_e542ee68e047edab",
-# #         "arn:aws:iam::374165089831:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_4246ad7f15449d67"
-# #         ]
-# #     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
-# #     assessment_account_ids = ["12345678", "12345678"]
-# # }
+    audit_manager_owner_role = [ 
+        
+        "arn:aws:iam::904692622892:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_b55c4dbcc63de087",
+        "arn:aws:iam::904692622892:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_b6748e9d6f5bca95"
+        
+        ]
+    s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
+    assessment_account_ids = ["984761018131", "739240486781"]
+}
