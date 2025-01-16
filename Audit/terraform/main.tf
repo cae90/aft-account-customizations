@@ -83,8 +83,8 @@ module "aft-auditmanager-tgt"{
 
     audit_manager_owner_role = [ 
         
-        "arn:aws:iam::904692622892:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_b55c4dbcc63de087",
-        "arn:aws:iam::904692622892:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_b6748e9d6f5bca95"
+        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
+        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
         
         ]
     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id

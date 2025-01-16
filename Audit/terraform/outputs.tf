@@ -6,9 +6,9 @@
 # S3 Acccess Logs Bucket Resources Deployed
 #########################################
 
-# output "s3_logging_bucket_id" {
-#     value = module.s3-access-logs-bucket.s3_logging_bucket_id
-# }
+output "s3_logging_bucket_id" {
+    value = module.s3-access-logs-bucket.s3_logging_bucket_id
+}
 
 #########################################
 # CA Development and DR Resources Deployed
@@ -34,14 +34,14 @@
 # # AWS Audit Manager
 # #########################################
 
-# output "custom_kms_audit_manager_key_id" {
-#     value = module.aft-auditmanager-tgt.custom_kms_audit_manager_key_id
-# }
+output "custom_kms_audit_manager_key_id" {
+    value = module.aft-auditmanager-tgt.custom_kms_audit_manager_key_id
+}
 
-# output "audit_account_registration_id" {
-#     value = module.aft-auditmanager-tgt.audit_account_registration_id
-# }
+output "audit_account_registration_id" {
+    value = module.aft-auditmanager-tgt.audit_account_registration_id
+}
 
-# output "s3_assessment_bucket_id" {
-#     value = module.aft-auditmanager-tgt.s3_assessment_bucket_id
-# }
+output "s3_assessment_bucket_id" {
+    value = module.aft-auditmanager-tgt.s3_assessment_bucket_id
+}
