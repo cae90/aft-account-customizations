@@ -19,7 +19,7 @@ resource "aws_auditmanager_account_registration" "audit_account_registration_dr"
 }
 
 module "s3_bucket_assessmen_dr" {
-  source                     = "./modules/s3_bucket_assessment"
+  source                     = "./modules/s3_bucket_assessment-dr"
   aws_region                 = data.aws_region.current.name
   aws_account_id             = data.aws_caller_identity.current.account_id
   s3_logging_bucket_id       = var.s3_logging_bucket_id
@@ -28,9 +28,9 @@ module "s3_bucket_assessmen_dr" {
 }
 
 module "audit_manager_assessment_dr" {
-  source                     = "./modules/audit_manager_assessment"
+  source                     = "./modules/audit_manager_assessment-dr"
   for_each                   = toset(var.assessment_account_ids)
   assessment_account_id      = each.value
-  s3_assessment_bucket_id    = module.s3_bucket_assessment.s3_assessment_bucket_id
+  s3_assessment_bucket_id    = module.s3_bucket_assessment-dr.s3_assessment_bucket_id
   audit_manager_owner_role   = var.audit_manager_owner_role
 }

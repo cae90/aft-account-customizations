@@ -104,6 +104,6 @@ module "aft-auditmanager-tgt-dr"{
     assessment_account_ids = ["984761018131", "739240486781"]
     providers = {
         aws = aws.DR
-        aws.oregon = aws
+#        aws.oregon = aws
     }
 }
