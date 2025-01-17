@@ -11,7 +11,6 @@ resource "aws_auditmanager_assessment" "assessment_pci_40" {
     }
     
     framework_id = data.aws_auditmanager_framework.pci_40.id
-    roles = []
     roles {
         role_arn  = "${var.audit_manager_owner_role[0]}"
         role_type = "PROCESS_OWNER"
