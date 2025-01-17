@@ -27,9 +27,17 @@ module "s3_bucket_assessment_dr" {
   audit_manager_owner_role   = var.audit_manager_owner_role
 }
 
-module "audit_manager_assessment_dr" {
+module "audit_manager_assessment_dr_1" {
   source                     = "./modules/audit_manager_assessment-dr"
-  for_each                   = toset(var.assessment_account_ids)
+#  for_each                   = toset(var.assessment_account_ids)
+  assessment_account_id      = 
+  s3_assessment_bucket_id    = module.s3_bucket_assessment_dr.s3_assessment_bucket_id
+  audit_manager_owner_role   = var.audit_manager_owner_role
+}
+
+module "audit_manager_assessment_dr_2" {
+  source                     = "./modules/audit_manager_assessment-dr"
+#  for_each                   = toset(var.assessment_account_ids)
   assessment_account_id      = each.value
   s3_assessment_bucket_id    = module.s3_bucket_assessment_dr.s3_assessment_bucket_id
   audit_manager_owner_role   = var.audit_manager_owner_role
