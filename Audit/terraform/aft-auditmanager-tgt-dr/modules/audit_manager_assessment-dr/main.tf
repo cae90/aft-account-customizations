@@ -9,7 +9,9 @@ resource "aws_auditmanager_assessment" "assessment_pci_40" {
         destination      = "s3://${var.s3_assessment_bucket_id}"
         destination_type = "S3"
     }
+    
     framework_id = data.aws_auditmanager_framework.pci_40.id
+    roles = []
     roles {
         role_arn  = "${var.audit_manager_owner_role[0]}"
         role_type = "PROCESS_OWNER"
