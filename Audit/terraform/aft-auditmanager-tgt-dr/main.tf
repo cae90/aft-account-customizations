@@ -7,6 +7,7 @@ resource "aws_kms_key" "custom_kms_audit_manager_dr" {
   enable_key_rotation     = true
   rotation_period_in_days = 365
   policy                  = data.aws_iam_policy_document.assessment_kms_policy_document.json
+  tags    = local.common_tags
 }
 
 resource "aws_kms_alias" "custom_kms_audit_manager_alias_dr" {
@@ -25,6 +26,7 @@ module "s3_bucket_assessment_dr" {
   s3_logging_bucket_id       = var.s3_logging_bucket_id
   audit_manager_kms_arn      = aws_kms_key.custom_kms_audit_manager_dr.arn
   audit_manager_owner_role   = var.audit_manager_owner_role
+  tags    = local.common_tags
 }
 
 module "audit_manager_assessment_dr" {
@@ -33,4 +35,5 @@ module "audit_manager_assessment_dr" {
   assessment_account_id      = each.value
   s3_assessment_bucket_id    = module.s3_bucket_assessment_dr.s3_assessment_bucket_id
   audit_manager_owner_role   = var.audit_manager_owner_role
+  tags    = local.common_tags
 }

@@ -11,3 +11,8 @@ variable "account_id" {
   type        = string
   description = "Account id AWS"
 }
+
+variable "tags" {
+    type        = map
+    description = "Configuration tag for certificate"
+}

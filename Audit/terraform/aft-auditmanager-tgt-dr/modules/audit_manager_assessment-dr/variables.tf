@@ -16,3 +16,8 @@ variable "assessment_account_id"{
     type        = string
     description = "Accout IDs in scope of the assessment"
 }
+
+variable "tags" {
+    type        = map
+    description = "Configuration tag for certificate"
+}

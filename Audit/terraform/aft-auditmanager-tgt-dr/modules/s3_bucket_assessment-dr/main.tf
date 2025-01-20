@@ -7,6 +7,7 @@
 resource "aws_s3_bucket" "assessment_bucket" {
     bucket = "audit-manager-assessment-bucket-dr-${var.aws_account_id}"
     force_destroy = true
+    tags = var.tags
 }
 
 resource "aws_s3_bucket_public_access_block" "assessment_bucket_public_access" {

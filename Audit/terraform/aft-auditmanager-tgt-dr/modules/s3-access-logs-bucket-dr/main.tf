@@ -5,6 +5,7 @@
 # S3 Access Logs Bucket
 resource "aws_s3_bucket" "logging-bucket" {
   bucket = "access-logging-bucket-dr-${var.account_id}-${var.aws_region}"
+  tags = var.tags
 }
 
 resource "aws_s3_bucket_policy" "logging-bucket-policy" {

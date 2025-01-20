@@ -26,3 +26,8 @@ variable "audit_manager_owner_role"{
     type        = list(string)
     description = "owner role allowed to execute and access the assessment"
 }
+
+variable "tags" {
+    type        = map
+    description = "Configuration tag for certificate"
+}

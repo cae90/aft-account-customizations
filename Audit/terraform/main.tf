@@ -89,6 +89,14 @@ module "aft-auditmanager-tgt"{
         ]
     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
     assessment_account_ids = ["984761018131", "739240486781"]
+    direccion   = "D.R. xxxxxx"
+    gerencia    = "xxxxxx"
+    proyecto    = "xxxxxx"
+    centroCostos = "xxxxx"
+    responsable = "xxxxxx"
+    ambiente    = "xxxxxx"
+    servicio    = "xxxxxxx"
+    idCargoSAP  = "xxxxxxx"
 }
 
 module "aft-auditmanager-tgt-dr"{
@@ -102,6 +110,14 @@ module "aft-auditmanager-tgt-dr"{
         ]
     s3_logging_bucket_id =  module.s3-access-logs-bucket-dr.s3_logging_bucket_id
     assessment_account_ids = ["984761018131", "739240486781"]
+    direccion   = "D.R. xxxxxx"
+    gerencia    = "xxxxxx"
+    proyecto    = "xxxxxx"
+    centroCostos = "xxxxx"
+    responsable = "xxxxxx"
+    ambiente    = "xxxxxx"
+    servicio    = "xxxxxxx"
+    idCargoSAP  = "xxxxxxx"
     providers = {
         aws = aws.DR
 #        aws.oregon = aws

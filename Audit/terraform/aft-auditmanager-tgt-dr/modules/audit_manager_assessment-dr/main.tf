@@ -5,6 +5,7 @@ resource "aws_auditmanager_assessment" "assessment_pci_40" {
 
     name = "Assessment PCI 4.0-${var.assessment_account_id}"
     description = "This assessment validates the accounts in scope of pci compliance"
+    tags = var.tags
     assessment_reports_destination {
         destination      = "s3://${var.s3_assessment_bucket_id}"
         destination_type = "S3"
