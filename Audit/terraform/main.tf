@@ -78,48 +78,48 @@ module "s3-access-logs-bucket-dr" {
     
 # # }
 
-module "aft-auditmanager-tgt"{
-    source ="./aft-auditmanager-tgt"
+# module "aft-auditmanager-tgt"{
+#     source ="./aft-auditmanager-tgt"
 
-    audit_manager_owner_role = [ 
+#     audit_manager_owner_role = [ 
         
-        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
-        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
+#         "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
+#         "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
         
-        ]
-    s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
-    assessment_account_ids = ["984761018131", "739240486781"]
-    direccion   = "D.R. xxxxxx"
-    gerencia    = "xxxxxx"
-    proyecto    = "xxxxxx"
-    centroCostos = "xxxxx"
-    responsable = "xxxxxx"
-    ambiente    = "xxxxxx"
-    servicio    = "xxxxxxx"
-    idCargoSAP  = "xxxxxxx"
-}
+#         ]
+#     s3_logging_bucket_id =  module.s3-access-logs-bucket.s3_logging_bucket_id
+#     assessment_account_ids = ["984761018131", "739240486781"]
+#     direccion   = "D.R. xxxxxx"
+#     gerencia    = "xxxxxx"
+#     proyecto    = "xxxxxx"
+#     centroCostos = "xxxxx"
+#     responsable = "xxxxxx"
+#     ambiente    = "xxxxxx"
+#     servicio    = "xxxxxxx"
+#     idCargoSAP  = "xxxxxxx"
+# }
 
-module "aft-auditmanager-tgt-dr"{
-    source ="./aft-auditmanager-tgt-dr"
+# module "aft-auditmanager-tgt-dr"{
+#     source ="./aft-auditmanager-tgt-dr"
 
-    audit_manager_owner_role = [ 
+#     audit_manager_owner_role = [ 
         
-        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
-        "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
+#         "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSAdministratorAccess_be5b0692b485908a",
+#         "arn:aws:iam::120569618617:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_AWSPowerUserAccess_f7ac7c69e0f997a0"
         
-        ]
-    s3_logging_bucket_id =  module.s3-access-logs-bucket-dr.s3_logging_bucket_id
-    assessment_account_ids = ["984761018131", "739240486781"]
-    direccion   = "D.R. xxxxxx"
-    gerencia    = "xxxxxx"
-    proyecto    = "xxxxxx"
-    centroCostos = "xxxxx"
-    responsable = "xxxxxx"
-    ambiente    = "xxxxxx"
-    servicio    = "xxxxxxx"
-    idCargoSAP  = "xxxxxxx"
-    providers = {
-        aws = aws.DR
-#        aws.oregon = aws
-    }
-}
+#         ]
+#     s3_logging_bucket_id =  module.s3-access-logs-bucket-dr.s3_logging_bucket_id
+#     assessment_account_ids = ["984761018131", "739240486781"]
+#     direccion   = "D.R. xxxxxx"
+#     gerencia    = "xxxxxx"
+#     proyecto    = "xxxxxx"
+#     centroCostos = "xxxxx"
+#     responsable = "xxxxxx"
+#     ambiente    = "xxxxxx"
+#     servicio    = "xxxxxxx"
+#     idCargoSAP  = "xxxxxxx"
+#     providers = {
+#         aws = aws.DR
+# #        aws.oregon = aws
+#     }
+# }
