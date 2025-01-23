@@ -23,7 +23,6 @@ module "aft-auditmanager-mgmt-dr"{
     administrator_account_id = "904692622892"
     providers = {
         aws = aws.DR
-        aws.oregon = aws
     }
 }
 # module "aft-log-source-mgmt"{
